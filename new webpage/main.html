@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Education Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Added new CSS styles */
+        /* CSS Styles */
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f0f4f8;
+    color: #2d3748;
+}
+
+.navbar {
+    background: #2c5282;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.dropdown {
+    position: relative; /* Make sure the parent is positioned */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 200px; /* Fixed width */
+    z-index: 10;  /* Ensure it appears above other elements */
+    top: 100%;    /* Position it directly below the parent */
+    left: 0;      /* Align to the left of the parent */
+    border: 1px solid #ddd;  /* Border to make it more visible */
+}
+
+/* Display the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+}
+
+.tab-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.tab-header {
+    display: flex;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.tab-link {
+    padding: 1rem 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-link.active {
+    border-bottom: 3px solid #4299e1;
+    color: #4299e1;
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.accordion-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.accordion {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: #ebf8ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel {
+    display: none;
+    padding: 1rem;
+    background: white;
+    border-radius: 5px;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+}
+
+.option {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    background: #f7fafc;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option:hover {
+    background: #ebf8ff;
+    border-color: #90cdf4;
+}
+
+.correct {
+    background: #c6f6d5;
+    border-color: #68d391;
+}
+
+footer {
+    background: #2d3748;
+    color: white;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+        .cta {
+            background: #48bb78;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta:active {
+            transform: translateY(0);
+        }
+
+        .demo-email {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .demo-email button {
+            background: #e53e3e;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .demo-email button:hover {
+            background: #c53030;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">PhishGuard</div>
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#">Topics <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#what-is-phishing">What is Phishing?</a>
+                    <a href="#common-tactics">Common Tactics</a>
+                    <a href="#prevention">Prevention Tips</a>
+                    <!-- Added 4 new keywords -->
+                    <a href="#recent-examples">Recent Examples</a>
+                    <a href="#mobile-phishing">Mobile Phishing</a>
+                    <a href="#email-analysis">Email Analysis</a>
+                    <a href="#legal-consequences">Legal Consequences</a>
+                </div>
+            </li>
+            <li class="nav-item"><a href="#quiz">Interactive Quiz</a></li>
+            <li class="nav-item"><a href="#resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Protect Yourself from Phishing Attacks</h1>
+        <p>Learn to identify and prevent digital scams</p>
+        <button class="cta" onclick="showDemo()">View Interactive Demo</button>
+    </div>
+
+    <!-- Added content for empty sections -->
+    <div class="tab-container">
+        <div class="tab-header">
+            <button class="tab-link active" onclick="openTab(event, 'overview')">Overview</button>
+            <button class="tab-link" onclick="openTab(event, 'types')">Attack Types</button>
+            <button class="tab-link" onclick="openTab(event, 'tools')">Protection Tools</button>
+        </div>
+
+        <div id="overview" class="tab-content active">
+            <h2>Understanding Phishing</h2>
+            <p>Phishing is a cybercrime where targets are contacted by email, telephone, or text message by someone posing as a legitimate institution to lure individuals into providing sensitive data.</p>
+            <div class="stats-box">
+                <div class="stat-item">
+                    <h3>90%</h3>
+                    <p>of data breaches start with phishing</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1.5M</h3>
+                    <p>new phishing sites created each month</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="types" class="tab-content">
+            <h2>Common Phishing Attack Types</h2>
+            <div class="attack-types">
+                <div class="attack-card">
+                    <h3>Spear Phishing</h3>
+                    <p>Targeted attacks on specific individuals or organizations</p>
+                </div>
+                <div class="attack-card">
+                    <h3>Smishing</h3>
+                    <p>Phishing via SMS/text messages</p>
+                </div>
+                <div class="attack-card">
+                    <h3>Vishing</h3>
+                    <p>Voice phishing through phone calls</p>
+                </div>
+                <div class="attack-card">
+                    <h3>Pharming</h3>
+                    <p>Redirecting users to fake websites</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tools" class="tab-content">
+            <h2>Essential Protection Tools</h2>
+            <ul class="tools-list">
+                <li>✅ Email filtering solutions</li>
+                <li>✅ Two-factor authentication (2FA)</li>
+                <li>✅ Password managers</li>
+                <li>✅ Anti-phishing browser extensions</li>
+                <li>✅ Security awareness training</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Added 3 more FAQs -->
+    <div class="accordion-section">
+        <h2>FAQ</h2>
+        <button class="accordion">How common are phishing attacks? <i class="fas fa-plus"></i></button>
+        <div class="panel">
+            <p>Phishing accounts for 90% of data breaches, with an estimated 3.4 billion malicious emails sent daily.</p>
+        </div>
+        <button class="accordion">How can I recognize a phishing email? <i class="fas fa-plus"></i></button>
+        <div class="panel">
+            <p>Look for mismatched sender addresses, urgent language, spelling errors, and suspicious links or attachments.</p>
+        </div>
+        <button class="accordion">What should I do if I fall victim? <i class="fas fa-plus"></i></button>
+        <div class="panel">
+            <p>Immediately change passwords, contact your financial institution, and report to authorities like the FTC.</p>
+        </div>
+        <button class="accordion">Is phishing only done through email? <i class="fas fa-plus"></i></button>
+        <div class="panel">
+            <p>No, phishing can occur via SMS (smishing), voice calls (vishing), social media, and even QR codes.</p>
+        </div>
+    </div>
+
+    <div class="quiz-container" id="quiz">
+        <h2>Test Your Knowledge</h2>
+        <div class="quiz-progress"></div>
+        <div class="question">
+            <p>What's the first thing you should do with a suspicious email?</p>
+            <div class="options">
+                <button class="option">Open attachments</button>
+                <button class="option">Reply to verify</button>
+                <button class="option correct">Report it</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter">
+                <h3>Stay Updated</h3>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <a href="#">Report Phishing</a>
+                <a href="#">Security Tools</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+        // JavaScript Interactivity
+document.addEventListener('DOMContentLoaded', () => {
+    // Accordion functionality
+    const acc = document.querySelectorAll('.accordion');
+    acc.forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
+    // Quiz functionality
+    const options = document.querySelectorAll('.option');
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            if (this.classList.contains('correct')) {
+                this.style.backgroundColor = '#9ae6b4';
+            } else {
+                this.style.backgroundColor = '#fed7d7';
+            }
+        });
+    });
+});
+
+function openTab(evt, tabName) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    const tabLinks = document.querySelectorAll('.tab-link');
+    
+    tabContents.forEach(content => content.classList.remove('active'));
+    tabLinks.forEach(link => link.classList.remove('active'));
+    
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+}
+
+function showDemo() {
+    // Interactive phishing email demo
+    const demoContent = `
+        <div class="demo-email">
+            <h3>Suspicious Email Example</h3>
+            <p>From: "Bank Security" <security@fakebank123.com></p>
+            <p>Subject: Urgent: Account Verification Required</p>
+            <p>Dear Customer,</p>
+            <p>We detected unusual activity on your account. Please verify your details immediately:</p>
+            <button onclick="this.style.backgroundColor='#ff0000'">Click to Verify</button>
+            <p>Note: This is a simulated phishing example</p>
+        </div>
+    `;
+    const demo = window.open("", "_blank", "width=600,height=400");
+    demo.document.write(demoContent);
+}
+        // Enhanced demo window styling
+        function showDemo() {
+            const demoContent = `
+                <html>
+                    <head>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                padding: 2rem;
+                                background: #f0f4f8;
+                            }
+                            .demo-email {
+                                background: white;
+                                padding: 2rem;
+                                border-radius: 10px;
+                                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                                max-width: 600px;
+                                margin: 1rem auto;
+                            }
+                            .demo-email button {
+                                background: #e53e3e;
+                                color: white;
+                                padding: 0.8rem 1.5rem;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                transition: background 0.3s;
+                            }
+                            .demo-email button:hover {
+                                background: #c53030;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="demo-email">
+                            <h3 style="color: #e53e3e; margin-bottom: 1.5rem;">Suspicious Email Example</h3>
+                            <p><strong>From:</strong> "Bank Security" &lt;security@fakebank123.com&gt;</p>
+                            <p><strong>Subject:</strong> Urgent: Account Verification Required</p>
+                            <div style="margin: 1.5rem 0; border-top: 1px solid #eee; padding-top: 1rem;">
+                                <p>Dear Valued Customer,</p>
+                                <p>We detected unusual login attempts on your account. Please verify your credentials immediately to avoid account suspension:</p>
+                                <button onclick="this.style.backgroundColor='#c53030'">Verify Account Now</button>
+                            </div>
+                            <p style="color: #666; font-size: 0.9rem; margin-top: 2rem;">⚠️ Note: This is a simulated phishing example - never click suspicious links!</p>
+                        </div>
+                    </body>
+                </html>
+            `;
+            
+            const demo = window.open("", "_blank", "width=600,height=500");
+            demo.document.write(demoContent);
+            demo.document.close();
+        }
+    </script>
+</body>
+</html>
