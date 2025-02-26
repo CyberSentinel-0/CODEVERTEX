@@ -5,7 +5,7 @@ Welcome to my repository for the **CODEVERTEX Internship Projects**. During my f
 - **Encryption-Decryption**: A secure application for encrypting and decrypting messages.
 - **Network Analyzer**: A tool to analyze network traffic and system connectivity.
 - **New Webpage**: A modern, responsive webpage built to showcase web development techniques.
-- **Password Checker**: An application that evaluates password strength using regular expressions.
+- **Password Strength Checker**: An application that evaluates password strength using regular expressions.
 
 Each project has been packaged as a standalone application with an executable file (`.exe`) located in its respective `dist` folder. You can run the executable directly for a hassle-free experience.
 
